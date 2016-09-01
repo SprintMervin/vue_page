@@ -3,6 +3,6 @@
  */
 module.exports = {
     proxy: {
-        Host:'http://54.169.36.5:8080'
+        Host:'your host'
     }
 }
