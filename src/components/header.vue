@@ -4,12 +4,12 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                    中国好教育
+                    好教育后台管理
                     </a>
                 </div>
                 <p class="navbar-text navbar-right">
-                    Signed in as
-                    <a href="#" v-link="{name:'tab_2'}" class="navbar-link">developer</a>
+                    超级管理员
+                    <a href="#" v-link="{name:'tab_2'}" class="navbar-link">Admin</a>
                 </p>
 
             </div>
@@ -19,6 +19,6 @@
 
 <style>
     .navbar{
-        background-color: #e96153;
+        background-color: #333;
     }
 </style>

@@ -5,6 +5,7 @@
             <span>账号</span><input v-model='username' type="text"><br>
             <span>密码</span><input v-model='password' type="password"><br>
             <button @click="login">登录</button>
+            <p>{{msg}}</p>
         </div>
     </div>
 </template>
@@ -18,12 +19,20 @@
 </style>
 <script>
     export default{
+        data(){
+            return{
+                msg:''
+            }
+        },
         methods:{
             login:function () {
                 this.$http.post('/api/login/',{"username":this.username,"password":this.password}).then(function (response) {
                     var data = (response.data);
-                    this.msg = data;
+                    this.msg = '登陆成功';
                     router.go({name:'content'})
+                },function (response) {
+                    this.msg='登陆错误';
+
                 })
             }
         }

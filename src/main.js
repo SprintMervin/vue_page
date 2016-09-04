@@ -9,6 +9,9 @@ import home from './components/home.vue';
 // import tab_1 from './components/tab_1.vue';
 import content from './components/content.vue';
 import login from './components/login_window.vue';
+import activity from './components/activity.vue';
+import addActivity from './components/addActivity.vue';
+import editActivity from './components/editActivity.vue';
 
 
 Vue.use(VueRouter);
@@ -23,7 +26,22 @@ router.map({
     subRoutes:{
 		'/':{
 			name:'content',
-			component:content
+			component:content,
+            subRoutes:{
+			    '/': {
+                    name: 'activity',
+                    component: activity
+                },
+                '/addActivity':{
+                    name:'addActivity',
+                    component:addActivity
+                },
+                '/editActivity':{
+                    name:'editActivity',
+                    component:editActivity
+                },
+			}
+
 		},
 		'/tab_2':{
 			name:'tab_2',
