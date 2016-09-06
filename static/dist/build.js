@@ -78,11 +78,11 @@
 
 	var _activity2 = _interopRequireDefault(_activity);
 
-	var _addActivity = __webpack_require__(31);
+	var _addActivity = __webpack_require__(36);
 
 	var _addActivity2 = _interopRequireDefault(_addActivity);
 
-	var _editActivity = __webpack_require__(36);
+	var _editActivity = __webpack_require__(41);
 
 	var _editActivity2 = _interopRequireDefault(_editActivity);
 
@@ -90,9 +90,6 @@
 
 	_vue2.default.use(_vueResource2.default);
 	//引入组件
-
-	// import tab_2 from './components/tab_2.vue';
-	// import tab_1 from './components/tab_1.vue';
 
 
 	_vue2.default.use(_vueRouter2.default);
@@ -105,7 +102,7 @@
 	  '/home': {
 	    component: _home2.default,
 	    subRoutes: {
-	      '/': {
+	      '/home1': {
 	        name: 'content',
 	        component: _content2.default,
 	        subRoutes: {
@@ -124,7 +121,7 @@
 	        }
 
 	      },
-	      '/tab_2': {
+	      '/': {
 	        name: 'tab_2',
 	        component: _login_window2.default
 	      }
@@ -14875,7 +14872,7 @@
 /* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n    <nav class=\"navbar navbar-default\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <a class=\"navbar-brand\" href=\"#\">\n                好教育后台管理\n                </a>\n            </div>\n            <p class=\"navbar-text navbar-right\">\n                超级管理员\n                <a href=\"#\" v-link=\"{name:'tab_2'}\" class=\"navbar-link\">Admin</a>\n            </p>\n\n        </div>\n    </nav>\n</div>\n";
+	module.exports = "\n<div>\n    <nav class=\"navbar navbar-default navbar-fixed-top\">\n        <div class=\"container-fluid\">\n            <div class=\"navbar-header\">\n                <a class=\"navbar-brand\" href=\"#\">\n                好教育后台管理\n                </a>\n            </div>\n            <!--<p class=\"navbar-text navbar-right\">-->\n                <!--超级管理员-->\n                <!--<a href=\"#\" v-link=\"{name:'tab_2'}\" class=\"navbar-link\">Admin</a>-->\n            <!--</p>-->\n\n        </div>\n    </nav>\n</div>\n";
 
 /***/ },
 /* 15 */
@@ -14947,7 +14944,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /*.content{*/\n        /*width:100%;*/\n        /*height: 600px;*/\n        /*border:2px solid black ;*/\n    /*}*/\n/*.side_left{*/\n    /*border: 2px solid black;*/\n    /*width: 20%;*/\n    /*height: 600px;*/\n\n/*}*/\n    .side_right{\n        background-color: #fff;\n        height: 600px;\n    }\n    .nav>li>a:focus {\n        text-decoration: none;\n        background-color: lightslategrey;\n    }\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    .content{\n        margin-top:60px;\n    }\n.side_left{\nposition: fixed;\n}\n    .side_right{\n        /*background-color: #fff;*/\n        height: 600px;\n        margin-left: 17%;\n    }\n    .nav>li>a:focus {\n        text-decoration: none;\n        background-color: lightslategrey;\n    }\n", ""]);
 
 	// exports
 
@@ -14980,20 +14977,16 @@
 	//     </div>
 	// </template>
 	// <style>
-	//     /*.content{*/
-	//         /*width:100%;*/
-	//         /*height: 600px;*/
-	//         /*border:2px solid black ;*/
-	//     /*}*/
-	// /*.side_left{*/
-	//     /*border: 2px solid black;*/
-	//     /*width: 20%;*/
-	//     /*height: 600px;*/
-	//
-	// /*}*/
+	//     .content{
+	//         margin-top:60px;
+	//     }
+	// .side_left{
+	// position: fixed;
+	// }
 	//     .side_right{
-	//         background-color: #fff;
+	//         /*background-color: #fff;*/
 	//         height: 600px;
+	//         margin-left: 17%;
 	//     }
 	//     .nav>li>a:focus {
 	//         text-decoration: none;
@@ -15094,7 +15087,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n.login_bg{\n    margin-left: 30%;\n    width: 300px;\n    height: 300px;\n    background-color: #cccccc;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.login_bg{\n    margin-top:10%;\n    margin-left: 30%;\n    width: 400px;\n    height: 300px;\n    background-color: #cccccc;\n}\n.login_input{\n    width: 75%;\n    height: 30px;\n}\n.login_common{\n    margin-top: 20px;\n    margin-left: 60px;\n}\n", ""]);
 
 	// exports
 
@@ -15110,21 +15103,34 @@
 	});
 	// <template>
 	//     <div class="login_bg">
-	//         <span>登录</span>
-	//         <div>
-	//             <span>账号</span><input v-model='username' type="text"><br>
-	//             <span>密码</span><input v-model='password' type="password"><br>
-	//             <button @click="login">登录</button>
+	//         <div  style="background:#333;color:#fff;height:50px;font-size:20px;line-height:50px">好教育后台登录</div>
+	//             <div class="login_common">
+	//             <span>Username</span><br>
+	//             <input class="login_input" v-model='username' type="text">
+	//             </div>
+	//             <div class="login_common">
+	//             <span>Password</span><br>
+	//             <input class="login_input" v-model='password' type="password">
+	//             </div>
+	//             <button @click="login" class="login_common"  style="margin-left:160px">log in</button>
 	//             <p>{{msg}}</p>
-	//         </div>
 	//     </div>
 	// </template>
 	// <style>
 	//     .login_bg{
+	//         margin-top:10%;
 	//         margin-left: 30%;
-	//         width: 300px;
+	//         width: 400px;
 	//         height: 300px;
 	//         background-color: #cccccc;
+	//     }
+	//     .login_input{
+	//         width: 75%;
+	//         height: 30px;
+	//     }
+	//     .login_common{
+	//         margin-top: 20px;
+	//         margin-left: 60px;
 	//     }
 	// </style>
 	// <script>
@@ -15154,7 +15160,7 @@
 /* 25 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"login_bg\">\n    <span>登录</span>\n    <div>\n        <span>账号</span><input v-model='username' type=\"text\"><br>\n        <span>密码</span><input v-model='password' type=\"password\"><br>\n        <button @click=\"login\">登录</button>\n        <p>{{msg}}</p>\n    </div>\n</div>\n";
+	module.exports = "\n<div class=\"login_bg\">\n    <div  style=\"background:#333;color:#fff;height:50px;font-size:20px;line-height:50px\">好教育后台登录</div>\n        <div class=\"login_common\">\n        <span>Username</span><br>\n        <input class=\"login_input\" v-model='username' type=\"text\">\n        </div>\n        <div class=\"login_common\">\n        <span>Password</span><br>\n        <input class=\"login_input\" v-model='password' type=\"password\">\n        </div>\n        <button @click=\"login\" class=\"login_common\"  style=\"margin-left:160px\">log in</button>\n        <p>{{msg}}</p>\n</div>\n";
 
 /***/ },
 /* 26 */
@@ -15167,7 +15173,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] src/components/activity.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(30)
+	__vue_template__ = __webpack_require__(35)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15220,7 +15226,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.activity_tabs{\n    background-color: #eee;\n    width:700px;\n    height: 150px;\n    margin-top: 5px;\n    margin-bottom: 5px;\n    border-bottom: 3px solid #333;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.activity_tabs{\n    background-color: #eee;\n    width:100%;\n    height: 150px;\n    margin-top: 5px;\n    margin-bottom: 5px;\n    border-bottom: 3px solid #333;\n}\n.showModal{\n    height: 100%;\n    width: 100%;\n    background: black;\n    margin-left:50px;\n    opacity: 0.2;\n    position: fixed;\n    text-align: center;\n    padding-top: 200px;\n\n\n}\n.confirm{\n    height: 200px;\n    width: 200px;\n    margin-left: 400px;\n    padding-top: 200px;\n    position: absolute;\n    z-index: 999;\n\n}\n", ""]);
 
 	// exports
 
@@ -15235,80 +15241,47 @@
 	    value: true
 	});
 
-	var _loading = __webpack_require__(41);
+	var _loading = __webpack_require__(30);
 
 	var _loading2 = _interopRequireDefault(_loading);
 
-	var _vue = __webpack_require__(1);
-
-	var _vue2 = _interopRequireDefault(_vue);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// <template>
-	//     <div style="height:600px;overflow:scroll;margin-left:50px" >
-	//         <loading v-show="showLoading"></loading>
-	//
-	//         <table border='1px' style="overflow:scroll">
-	//             <tr>
-	//                 <th>id</th>
-	//                 <th>cover_image</th>
-	//                 <th>title</th>
-	//                 <th>description</th>
-	//                 <th>edit</th>
-	//             </tr>
-	//
-	//
-	//             <tr v-for="item in items">
-	//                 <td style="width:100px">{{item.id}}</td>
-	//                 <td><img v-bind:src="item.cover_image" style="width:150px;height:100px"></td>
-	//                 <td style="width:200px">{{item.title}}</td>
-	//                 <td style="width:200px">{{item.description}}</td>
-	//                 <td style="width:200px">
-	//                     <a v-link="{name:'editActivity'}">编辑</a><br>
-	//                     <a>删除</a>
-	//                 </td>
-	//             </tr>
-	//
-	//
-	//         </table>
-	//
-	//         <!--<div class="activity_tabs" v-for="item in items">-->
-	//                 <!---->
-	//         <!--</div>-->
-	//     </div>
-	// </template>
-	// <style>
-	//     .activity_tabs{
-	//         background-color: #eee;
-	//         width:700px;
-	//         height: 150px;
-	//         margin-top: 5px;
-	//         margin-bottom: 5px;
-	//         border-bottom: 3px solid #333;
-	//     }
-	// </style>
-	// <script>
 	exports.default = {
 	    data: function data() {
 	        return {
 	            msg: 'hello vue',
 	            items: [],
-	            showLoading: false
+	            showLoading: true,
+	            showDelete: false,
+	            activity_id: ''
 
 	        };
 	    },
 	    ready: function ready() {
 	        this.$http.get('/api/activity/list/').then(function (response) {
-	            if (response.status == 200) {
-	                this.showLoading = true;
-	            } else {
-	                this.showLoading = false;
-	                var data = JSON.parse(response.data).activities;
-	                this.items = data;
-	                console.log(response.status);
-	            }
+	            var data = JSON.parse(response.data).activities;
+	            this.items = data;
+	            console.log(response.status);
+	        }).then(function () {
+	            this.showLoading = false;
 	        });
+	    },
+
+	    methods: {
+	        showDeleteMenu: function showDeleteMenu() {
+	            this.activity_id = event.currentTarget.id;
+	            this.showDelete = true;
+	        },
+	        cancel: function cancel() {
+	            this.showDelete = false;
+	        },
+	        deleteActivity: function deleteActivity() {
+	            this.$http.get('/api/activity/' + this.activity_id + '/delete').then(function (response) {
+	                console.log("删除成功");
+	                location.reload();
+	            });
+	        }
 	    },
 
 	    components: {
@@ -15317,25 +15290,104 @@
 
 	};
 	// </script>
+	// <template>
+	//     <div class="showModal" v-show="showDelete">
+	//
+	//     </div>
+	//     <div class="confirm" v-show="showDelete">
+	//         <h3 style="color:red">确认删除?</h3>
+	//         <button @click="deleteActivity">确认</button>
+	//         <button @click="cancel">取消</button>
+	//     </div>
+	//     <div style="height:auto;margin-left:50px" >
+	//         <loading v-show="showLoading"></loading>
+	//
+	//         <!--<table border='1px' style="overflow:scroll">-->
+	//             <!--<tr>-->
+	//                 <!--<th>id</th>-->
+	//                 <!--<th>cover_image</th>-->
+	//                 <!--<th>title</th>-->
+	//                 <!--<th>description</th>-->
+	//                 <!--<th>edit</th>-->
+	//             <!--</tr>-->
+	//
+	//
+	//             <!--<tr v-for="item in items">-->
+	//                 <!--<td style="width:100px">{{item.id}}</td>-->
+	//                 <!--<td><img v-bind:src="item.cover_image" style="width:150px;height:100px"></td>-->
+	//                 <!--<td style="width:200px">{{item.title}}</td>-->
+	//                 <!--<td style="width:200px">{{item.description}}</td>-->
+	//                 <!--<td style="width:200px">-->
+	//                     <!--<a v-link="{name:'editActivity',query:{id:item.id,title:item.title,cover_image:item.cover_image,description:item.description}}" >编辑</a><br>-->
+	//                     <!--<a @click="deleteActivity" id={{item.id}}>删除</a>-->
+	//                 <!--</td>-->
+	//             <!--</tr>-->
+	//
+	//
+	//         <!--</table>-->
+	//
+	//         <div class="activity_tabs" v-for="item in items">
+	//             <div style="float:left">
+	//             <img v-bind:src="item.cover_image" style="width:150px;height:120px">
+	//             </div>
+	//             <div style="float:left;margin-left:100px">
+	//             <h4>标题:</h4><span>{{item.title}}</span><br>
+	//             <h4>描述:</h4><span>{{item.description}}</span>
+	//             </div>
+	//             <div style="float:right;margin-right:50px;margin-top:50px">
+	//             <a v-link="{name:'editActivity',query:{id:item.id,title:item.title,cover_image:item.cover_image,description:item.description}}" >编辑</a><br>
+	//             <a @click="showDeleteMenu" id={{item.id}}>删除</a>
+	//             </div>
+	//         </div>
+	//
+	//
+	//     </div>
+	// </template>
+	// <style>
+	//     .activity_tabs{
+	//         background-color: #eee;
+	//         width:100%;
+	//         height: 150px;
+	//         margin-top: 5px;
+	//         margin-bottom: 5px;
+	//         border-bottom: 3px solid #333;
+	//     }
+	//     .showModal{
+	//         height: 100%;
+	//         width: 100%;
+	//         background: black;
+	//         margin-left:50px;
+	//         opacity: 0.2;
+	//         position: fixed;
+	//         text-align: center;
+	//         padding-top: 200px;
+	//
+	//
+	//     }
+	//     .confirm{
+	//         height: 200px;
+	//         width: 200px;
+	//         margin-left: 400px;
+	//         padding-top: 200px;
+	//         position: absolute;
+	//         z-index: 999;
+	//
+	//     }
+	// </style>
+	// <script>
 
 /***/ },
 /* 30 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div style=\"height:600px;overflow:scroll;margin-left:50px\" >\n    <loading v-show=\"showLoading\"></loading>\n\n    <table border='1px' style=\"overflow:scroll\">\n        <tr>\n            <th>id</th>\n            <th>cover_image</th>\n            <th>title</th>\n            <th>description</th>\n            <th>edit</th>\n        </tr>\n\n\n        <tr v-for=\"item in items\">\n            <td style=\"width:100px\">{{item.id}}</td>\n            <td><img v-bind:src=\"item.cover_image\" style=\"width:150px;height:100px\"></td>\n            <td style=\"width:200px\">{{item.title}}</td>\n            <td style=\"width:200px\">{{item.description}}</td>\n            <td style=\"width:200px\">\n                <a v-link=\"{name:'editActivity'}\">编辑</a><br>\n                <a>删除</a>\n            </td>\n        </tr>\n\n\n    </table>\n\n    <!--<div class=\"activity_tabs\" v-for=\"item in items\">-->\n            <!---->\n    <!--</div>-->\n</div>\n";
-
-/***/ },
-/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(32)
-	__vue_script__ = __webpack_require__(34)
+	__webpack_require__(31)
+	__vue_script__ = __webpack_require__(33)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/addActivity.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(35)
+	  console.warn("[vue-loader] src/components/loading.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(34)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -15345,7 +15397,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./addActivity.vue"
+	  var id = "./loading.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15354,13 +15406,13 @@
 	})()}
 
 /***/ },
-/* 32 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(33);
+	var content = __webpack_require__(32);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(13)(content, {});
@@ -15369,8 +15421,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./addActivity.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./addActivity.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./loading.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./loading.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -15380,7 +15432,7 @@
 	}
 
 /***/ },
-/* 33 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(12)();
@@ -15388,13 +15440,13 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.sk-fading-circle {\n    margin: 100px auto;\n    width: 40px;\n    height: 40px;\n    position: relative;\n}\n\n.sk-fading-circle .sk-circle {\n    width: 100%;\n    height: 100%;\n    position: absolute;\n    left: 0;\n    top: 0;\n}\n\n.sk-fading-circle .sk-circle:before {\n    content: '';\n    display: block;\n    margin: 0 auto;\n    width: 15%;\n    height: 15%;\n    background-color: #333;\n    border-radius: 100%;\n    -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;\n    animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;\n}\n.sk-fading-circle .sk-circle2 {\n    -webkit-transform: rotate(30deg);\n    transform: rotate(30deg);\n}\n.sk-fading-circle .sk-circle3 {\n    -webkit-transform: rotate(60deg);\n    transform: rotate(60deg);\n}\n.sk-fading-circle .sk-circle4 {\n    -webkit-transform: rotate(90deg);\n    transform: rotate(90deg);\n}\n.sk-fading-circle .sk-circle5 {\n    -webkit-transform: rotate(120deg);\n    transform: rotate(120deg);\n}\n.sk-fading-circle .sk-circle6 {\n    -webkit-transform: rotate(150deg);\n    transform: rotate(150deg);\n}\n.sk-fading-circle .sk-circle7 {\n    -webkit-transform: rotate(180deg);\n    transform: rotate(180deg);\n}\n.sk-fading-circle .sk-circle8 {\n    -webkit-transform: rotate(210deg);\n    transform: rotate(210deg);\n}\n.sk-fading-circle .sk-circle9 {\n    -webkit-transform: rotate(240deg);\n    transform: rotate(240deg);\n}\n.sk-fading-circle .sk-circle10 {\n    -webkit-transform: rotate(270deg);\n    transform: rotate(270deg);\n}\n.sk-fading-circle .sk-circle11 {\n    -webkit-transform: rotate(300deg);\n    transform: rotate(300deg);\n}\n.sk-fading-circle .sk-circle12 {\n    -webkit-transform: rotate(330deg);\n    transform: rotate(330deg);\n}\n.sk-fading-circle .sk-circle2:before {\n    -webkit-animation-delay: -1.1s;\n    animation-delay: -1.1s;\n}\n.sk-fading-circle .sk-circle3:before {\n    -webkit-animation-delay: -1s;\n    animation-delay: -1s;\n}\n.sk-fading-circle .sk-circle4:before {\n    -webkit-animation-delay: -0.9s;\n    animation-delay: -0.9s;\n}\n.sk-fading-circle .sk-circle5:before {\n    -webkit-animation-delay: -0.8s;\n    animation-delay: -0.8s;\n}\n.sk-fading-circle .sk-circle6:before {\n    -webkit-animation-delay: -0.7s;\n    animation-delay: -0.7s;\n}\n.sk-fading-circle .sk-circle7:before {\n    -webkit-animation-delay: -0.6s;\n    animation-delay: -0.6s;\n}\n.sk-fading-circle .sk-circle8:before {\n    -webkit-animation-delay: -0.5s;\n    animation-delay: -0.5s;\n}\n.sk-fading-circle .sk-circle9:before {\n    -webkit-animation-delay: -0.4s;\n    animation-delay: -0.4s;\n}\n.sk-fading-circle .sk-circle10:before {\n    -webkit-animation-delay: -0.3s;\n    animation-delay: -0.3s;\n}\n.sk-fading-circle .sk-circle11:before {\n    -webkit-animation-delay: -0.2s;\n    animation-delay: -0.2s;\n}\n.sk-fading-circle .sk-circle12:before {\n    -webkit-animation-delay: -0.1s;\n    animation-delay: -0.1s;\n}\n\n@-webkit-keyframes sk-circleFadeDelay {\n    0%, 39%, 100% { opacity: 0; }\n    40% { opacity: 1; }\n}\n\n@keyframes sk-circleFadeDelay {\n    0%, 39%, 100% { opacity: 0; }\n    40% { opacity: 1; }\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 34 */
+/* 33 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -15402,54 +15454,182 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <div>
-	//         <span>标题</span>
-	//         <br>
-	//         <input type="text" v-model="title" placeholder="edit me"><br>
-	//         <span>图片URL</span>
-	//         <br>
-	//         <input type="text" v-model="cover_image" placeholder="edit me"><br>
-	//         <span>描述</span>
-	//         <br>
-	//         <input type="text" v-model="description" placeholder="edit me">
-	//         <br>
-	//         <button @click="addActivity">保存</button>
-	//         <p>{{msg}}</p>
-	//     </div>
+	// <template >
+	//         <div class="sk-fading-circle">
+	//             <div class="sk-circle1 sk-circle"></div>
+	//             <div class="sk-circle2 sk-circle"></div>
+	//             <div class="sk-circle3 sk-circle"></div>
+	//             <div class="sk-circle4 sk-circle"></div>
+	//             <div class="sk-circle5 sk-circle"></div>
+	//             <div class="sk-circle6 sk-circle"></div>
+	//             <div class="sk-circle7 sk-circle"></div>
+	//             <div class="sk-circle8 sk-circle"></div>
+	//             <div class="sk-circle9 sk-circle"></div>
+	//             <div class="sk-circle10 sk-circle"></div>
+	//             <div class="sk-circle11 sk-circle"></div>
+	//             <div class="sk-circle12 sk-circle"></div>
+	//         </div>
 	// </template>
 	// <style>
+	//     .sk-fading-circle {
+	//         margin: 100px auto;
+	//         width: 40px;
+	//         height: 40px;
+	//         position: relative;
+	//     }
+	//
+	//     .sk-fading-circle .sk-circle {
+	//         width: 100%;
+	//         height: 100%;
+	//         position: absolute;
+	//         left: 0;
+	//         top: 0;
+	//     }
+	//
+	//     .sk-fading-circle .sk-circle:before {
+	//         content: '';
+	//         display: block;
+	//         margin: 0 auto;
+	//         width: 15%;
+	//         height: 15%;
+	//         background-color: #333;
+	//         border-radius: 100%;
+	//         -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+	//         animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+	//     }
+	//     .sk-fading-circle .sk-circle2 {
+	//         -webkit-transform: rotate(30deg);
+	//         -ms-transform: rotate(30deg);
+	//         transform: rotate(30deg);
+	//     }
+	//     .sk-fading-circle .sk-circle3 {
+	//         -webkit-transform: rotate(60deg);
+	//         -ms-transform: rotate(60deg);
+	//         transform: rotate(60deg);
+	//     }
+	//     .sk-fading-circle .sk-circle4 {
+	//         -webkit-transform: rotate(90deg);
+	//         -ms-transform: rotate(90deg);
+	//         transform: rotate(90deg);
+	//     }
+	//     .sk-fading-circle .sk-circle5 {
+	//         -webkit-transform: rotate(120deg);
+	//         -ms-transform: rotate(120deg);
+	//         transform: rotate(120deg);
+	//     }
+	//     .sk-fading-circle .sk-circle6 {
+	//         -webkit-transform: rotate(150deg);
+	//         -ms-transform: rotate(150deg);
+	//         transform: rotate(150deg);
+	//     }
+	//     .sk-fading-circle .sk-circle7 {
+	//         -webkit-transform: rotate(180deg);
+	//         -ms-transform: rotate(180deg);
+	//         transform: rotate(180deg);
+	//     }
+	//     .sk-fading-circle .sk-circle8 {
+	//         -webkit-transform: rotate(210deg);
+	//         -ms-transform: rotate(210deg);
+	//         transform: rotate(210deg);
+	//     }
+	//     .sk-fading-circle .sk-circle9 {
+	//         -webkit-transform: rotate(240deg);
+	//         -ms-transform: rotate(240deg);
+	//         transform: rotate(240deg);
+	//     }
+	//     .sk-fading-circle .sk-circle10 {
+	//         -webkit-transform: rotate(270deg);
+	//         -ms-transform: rotate(270deg);
+	//         transform: rotate(270deg);
+	//     }
+	//     .sk-fading-circle .sk-circle11 {
+	//         -webkit-transform: rotate(300deg);
+	//         -ms-transform: rotate(300deg);
+	//         transform: rotate(300deg);
+	//     }
+	//     .sk-fading-circle .sk-circle12 {
+	//         -webkit-transform: rotate(330deg);
+	//         -ms-transform: rotate(330deg);
+	//         transform: rotate(330deg);
+	//     }
+	//     .sk-fading-circle .sk-circle2:before {
+	//         -webkit-animation-delay: -1.1s;
+	//         animation-delay: -1.1s;
+	//     }
+	//     .sk-fading-circle .sk-circle3:before {
+	//         -webkit-animation-delay: -1s;
+	//         animation-delay: -1s;
+	//     }
+	//     .sk-fading-circle .sk-circle4:before {
+	//         -webkit-animation-delay: -0.9s;
+	//         animation-delay: -0.9s;
+	//     }
+	//     .sk-fading-circle .sk-circle5:before {
+	//         -webkit-animation-delay: -0.8s;
+	//         animation-delay: -0.8s;
+	//     }
+	//     .sk-fading-circle .sk-circle6:before {
+	//         -webkit-animation-delay: -0.7s;
+	//         animation-delay: -0.7s;
+	//     }
+	//     .sk-fading-circle .sk-circle7:before {
+	//         -webkit-animation-delay: -0.6s;
+	//         animation-delay: -0.6s;
+	//     }
+	//     .sk-fading-circle .sk-circle8:before {
+	//         -webkit-animation-delay: -0.5s;
+	//         animation-delay: -0.5s;
+	//     }
+	//     .sk-fading-circle .sk-circle9:before {
+	//         -webkit-animation-delay: -0.4s;
+	//         animation-delay: -0.4s;
+	//     }
+	//     .sk-fading-circle .sk-circle10:before {
+	//         -webkit-animation-delay: -0.3s;
+	//         animation-delay: -0.3s;
+	//     }
+	//     .sk-fading-circle .sk-circle11:before {
+	//         -webkit-animation-delay: -0.2s;
+	//         animation-delay: -0.2s;
+	//     }
+	//     .sk-fading-circle .sk-circle12:before {
+	//         -webkit-animation-delay: -0.1s;
+	//         animation-delay: -0.1s;
+	//     }
+	//
+	//     @-webkit-keyframes sk-circleFadeDelay {
+	//         0%, 39%, 100% { opacity: 0; }
+	//         40% { opacity: 1; }
+	//     }
+	//
+	//     @keyframes sk-circleFadeDelay {
+	//         0%, 39%, 100% { opacity: 0; }
+	//         40% { opacity: 1; }
+	//     }
 	// </style>
 	// <script>
 	exports.default = {
 	    data: function data() {
 	        return {
-	            msg: '操作结果'
+	            msg: '正在加载'
 	        };
 	    },
 
-	    methods: {
-	        addActivity: function addActivity() {
-	            this.$http.post('/api/activity/create', { "title": this.title, "cover_image": this.cover_image, "description": this.description }).then(function (response) {
-	                var data = response.data;
-	                this.msg = data;
-	                //                    router.go({name:'addActivity'}
-	                location.reload();
-	            }, function (response) {
-	                var data = response.data;
-	                this.msg = data;
-	            });
-	        }
-	    },
 	    components: {}
 	};
 	// </script>
 
 /***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"sk-fading-circle\">\n    <div class=\"sk-circle1 sk-circle\"></div>\n    <div class=\"sk-circle2 sk-circle\"></div>\n    <div class=\"sk-circle3 sk-circle\"></div>\n    <div class=\"sk-circle4 sk-circle\"></div>\n    <div class=\"sk-circle5 sk-circle\"></div>\n    <div class=\"sk-circle6 sk-circle\"></div>\n    <div class=\"sk-circle7 sk-circle\"></div>\n    <div class=\"sk-circle8 sk-circle\"></div>\n    <div class=\"sk-circle9 sk-circle\"></div>\n    <div class=\"sk-circle10 sk-circle\"></div>\n    <div class=\"sk-circle11 sk-circle\"></div>\n    <div class=\"sk-circle12 sk-circle\"></div>\n</div>\n";
+
+/***/ },
 /* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n    <span>标题</span>\n    <br>\n    <input type=\"text\" v-model=\"title\" placeholder=\"edit me\"><br>\n    <span>图片URL</span>\n    <br>\n    <input type=\"text\" v-model=\"cover_image\" placeholder=\"edit me\"><br>\n    <span>描述</span>\n    <br>\n    <input type=\"text\" v-model=\"description\" placeholder=\"edit me\">\n    <br>\n    <button @click=\"addActivity\">保存</button>\n    <p>{{msg}}</p>\n</div>\n";
+	module.exports = "\n<div class=\"showModal\" v-show=\"showDelete\">\n\n</div>\n<div class=\"confirm\" v-show=\"showDelete\">\n    <h3 style=\"color:red\">确认删除?</h3>\n    <button @click=\"deleteActivity\">确认</button>\n    <button @click=\"cancel\">取消</button>\n</div>\n<div style=\"height:auto;margin-left:50px\" >\n    <loading v-show=\"showLoading\"></loading>\n\n    <!--<table border='1px' style=\"overflow:scroll\">-->\n        <!--<tr>-->\n            <!--<th>id</th>-->\n            <!--<th>cover_image</th>-->\n            <!--<th>title</th>-->\n            <!--<th>description</th>-->\n            <!--<th>edit</th>-->\n        <!--</tr>-->\n\n\n        <!--<tr v-for=\"item in items\">-->\n            <!--<td style=\"width:100px\">{{item.id}}</td>-->\n            <!--<td><img v-bind:src=\"item.cover_image\" style=\"width:150px;height:100px\"></td>-->\n            <!--<td style=\"width:200px\">{{item.title}}</td>-->\n            <!--<td style=\"width:200px\">{{item.description}}</td>-->\n            <!--<td style=\"width:200px\">-->\n                <!--<a v-link=\"{name:'editActivity',query:{id:item.id,title:item.title,cover_image:item.cover_image,description:item.description}}\" >编辑</a><br>-->\n                <!--<a @click=\"deleteActivity\" id={{item.id}}>删除</a>-->\n            <!--</td>-->\n        <!--</tr>-->\n\n\n    <!--</table>-->\n\n    <div class=\"activity_tabs\" v-for=\"item in items\">\n        <div style=\"float:left\">\n        <img v-bind:src=\"item.cover_image\" style=\"width:150px;height:120px\">\n        </div>\n        <div style=\"float:left;margin-left:100px\">\n        <h4>标题:</h4><span>{{item.title}}</span><br>\n        <h4>描述:</h4><span>{{item.description}}</span>\n        </div>\n        <div style=\"float:right;margin-right:50px;margin-top:50px\">\n        <a v-link=\"{name:'editActivity',query:{id:item.id,title:item.title,cover_image:item.cover_image,description:item.description}}\" >编辑</a><br>\n        <a @click=\"showDeleteMenu\" id={{item.id}}>删除</a>\n        </div>\n    </div>\n\n\n</div>\n";
 
 /***/ },
 /* 36 */
@@ -15461,7 +15641,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/editActivity.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src/components/addActivity.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(40)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15472,7 +15652,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./editActivity.vue"
+	  var id = "./addActivity.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15496,8 +15676,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./editActivity.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./editActivity.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./addActivity.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./addActivity.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -15515,20 +15695,61 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 39 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _loading = __webpack_require__(30);
+
+	var _loading2 = _interopRequireDefault(_loading);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    data: function data() {
+	        return {
+	            msg: '操作结果',
+	            showLoading: false
+
+	        };
+	    },
+
+	    methods: {
+	        addActivity: function addActivity() {
+	            this.showLoading = true;
+
+	            this.$http.post('/api/activity/create', { "title": this.title, "cover_image": this.cover_image, "description": this.description }).then(function (response) {
+
+	                var data = response.data;
+	                this.msg = data;
+	                //                    router.go({name:'addActivity'}
+	                location.reload();
+	            }, function (response) {
+
+	                var data = response.data;
+	                this.msg = data;
+	            }).then(function () {
+	                this.showLoading = false;
+	            });
+	        }
+	    },
+	    components: {
+	        'loading': _loading2.default
+
+	    }
+	};
+	// </script>
 	// <template>
 	//     <div>
 	//         <span>标题</span>
@@ -15542,40 +15763,19 @@
 	//         <input type="text" v-model="description" placeholder="edit me">
 	//         <br>
 	//         <button @click="addActivity">保存</button>
-	//         <p>{{msg}}</p>
+	//         <!--<p>{{msg}}</p>-->
+	//         <loading v-show="showLoading"></loading>
 	//     </div>
 	// </template>
 	// <style>
 	// </style>
 	// <script>
-	exports.default = {
-	    data: function data() {
-	        return {
-	            msg: '操作结果'
-	        };
-	    },
-	    ready: function ready() {
-	        this.$http.post('/api/activity/edit', { "title": this.title, "cover_image": this.cover_image, "description": this.description }).then(function (response) {
-	            var data = response.data;
-	            this.msg = data;
-	            //                    router.go({name:'addActivity'}
-	            location.reload();
-	        }, function (response) {
-	            var data = response.data;
-	            this.msg = data;
-	        });
-	    },
-
-
-	    components: {}
-	};
-	// </script>
 
 /***/ },
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n    <span>标题</span>\n    <br>\n    <input type=\"text\" v-model=\"title\" placeholder=\"edit me\"><br>\n    <span>图片URL</span>\n    <br>\n    <input type=\"text\" v-model=\"cover_image\" placeholder=\"edit me\"><br>\n    <span>描述</span>\n    <br>\n    <input type=\"text\" v-model=\"description\" placeholder=\"edit me\">\n    <br>\n    <button @click=\"addActivity\">保存</button>\n    <p>{{msg}}</p>\n</div>\n";
+	module.exports = "\n<div>\n    <span>标题</span>\n    <br>\n    <input type=\"text\" v-model=\"title\" placeholder=\"edit me\"><br>\n    <span>图片URL</span>\n    <br>\n    <input type=\"text\" v-model=\"cover_image\" placeholder=\"edit me\"><br>\n    <span>描述</span>\n    <br>\n    <input type=\"text\" v-model=\"description\" placeholder=\"edit me\">\n    <br>\n    <button @click=\"addActivity\">保存</button>\n    <!--<p>{{msg}}</p>-->\n    <loading v-show=\"showLoading\"></loading>\n</div>\n";
 
 /***/ },
 /* 41 */
@@ -15587,7 +15787,7 @@
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] src/components/loading.vue: named exports in *.vue files are ignored.")}
+	  console.warn("[vue-loader] src/components/editActivity.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(45)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -15598,7 +15798,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
-	  var id = "./loading.vue"
+	  var id = "./editActivity.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -15622,8 +15822,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./loading.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./loading.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./editActivity.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./editActivity.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -15641,44 +15841,105 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 44 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template >
-	//     <div class="loading-overlay">
-	//             正在加载。。。。
+
+	var _loading = __webpack_require__(30);
+
+	var _loading2 = _interopRequireDefault(_loading);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = {
+	    data: function data() {
+	        return {
+	            msg: '',
+	            id: '',
+	            title: '',
+	            description: '',
+	            cover_image: '',
+	            showLoading: false
+
+	        };
+	    },
+
+	    methods: {
+	        saveActivity: function saveActivity() {
+
+	            this.showLoading = true;
+
+	            this.$http.post("/api/activity/" + this.id + "/save", { "title": this.title, "cover_image": this.cover_image, "description": this.description }).then(function (response) {
+	                //                    var data = response.data;
+	                this.msg = '保存成功';
+	                //                    router.go({name:'addActivity'}
+	                //                    location.reload();
+	            }, function (response) {
+	                //                    var data = response.data;
+	                this.msg = '保存失败';
+	            }).then(function () {
+	                this.showLoading = false;
+	            });
+	        }
+	    },
+
+	    components: {
+	        'loading': _loading2.default
+	    },
+	    route: {
+	        data: function data(_ref) {
+	            var _ref$to$query = _ref.to.query;
+	            var id = _ref$to$query.id;
+	            var description = _ref$to$query.description;
+	            var title = _ref$to$query.title;
+	            var cover_image = _ref$to$query.cover_image;
+
+	            this.id = id;
+	            this.title = title;
+	            this.cover_image = cover_image;
+	            this.description = description;
+	        }
+	    }
+	};
+	// </script>
+	// <template>
+	//     <div>
+	//         <span>标题</span>
+	//         <br>
+	//         <input type="text" v-model="title" placeholder={{id}}><br>
+	//         <span>图片URL</span>
+	//         <br>
+	//         <input type="text" v-model="cover_image" placeholder={{cover_image}}><br>
+	//         <span>描述</span>
+	//         <br>
+	//         <input type="text" v-model="description" placeholder={{description}}>
+	//         <br>
+	//         <button @click="saveActivity">保存</button>
+	//         <p style="color:green">{{msg}}</p>
+	//         <loading v-show="showLoading"></loading>
+	//
 	//     </div>
 	// </template>
 	// <style>
 	// </style>
 	// <script>
-	exports.default = {
-	    data: function data() {
-	        return {
-	            msg: 'hello vue'
-	        };
-	    },
-
-	    components: {}
-	};
-	// </script>
 
 /***/ },
 /* 45 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"loading-overlay\">\n        正在加载。。。。\n</div>\n";
+	module.exports = "\n<div>\n    <span>标题</span>\n    <br>\n    <input type=\"text\" v-model=\"title\" placeholder={{id}}><br>\n    <span>图片URL</span>\n    <br>\n    <input type=\"text\" v-model=\"cover_image\" placeholder={{cover_image}}><br>\n    <span>描述</span>\n    <br>\n    <input type=\"text\" v-model=\"description\" placeholder={{description}}>\n    <br>\n    <button @click=\"saveActivity\">保存</button>\n    <p style=\"color:green\">{{msg}}</p>\n    <loading v-show=\"showLoading\"></loading>\n\n</div>\n";
 
 /***/ }
 /******/ ]);

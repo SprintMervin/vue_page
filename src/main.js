@@ -5,8 +5,6 @@ Vue.use(vueResource);
 //引入组件
 import App from './app.vue';
 import home from './components/home.vue';
-// import tab_2 from './components/tab_2.vue';
-// import tab_1 from './components/tab_1.vue';
 import content from './components/content.vue';
 import login from './components/login_window.vue';
 import activity from './components/activity.vue';
@@ -24,7 +22,7 @@ router.map({
   '/home': {
     component: home,
     subRoutes:{
-		'/':{
+		'/home1':{
 			name:'content',
 			component:content,
             subRoutes:{
@@ -43,7 +41,7 @@ router.map({
 			}
 
 		},
-		'/tab_2':{
+		'/':{
 			name:'tab_2',
 			component:login
 		}

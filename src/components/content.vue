@@ -17,20 +17,16 @@
     </div>
 </template>
 <style>
-    /*.content{*/
-        /*width:100%;*/
-        /*height: 600px;*/
-        /*border:2px solid black ;*/
-    /*}*/
-/*.side_left{*/
-    /*border: 2px solid black;*/
-    /*width: 20%;*/
-    /*height: 600px;*/
-
-/*}*/
+    .content{
+        margin-top:60px;
+    }
+.side_left{
+position: fixed;
+}
     .side_right{
-        background-color: #fff;
+        /*background-color: #fff;*/
         height: 600px;
+        margin-left: 17%;
     }
     .nav>li>a:focus {
         text-decoration: none;
